@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Event Handlers in JS</title>
+</head>
+<body>
+    <h1>Event Handlers in JS</h1>
+
+    <label>Username:</label>
+    <input type="text" id="username"><br><br>
+
+    <label>Password:</label>
+    <input type="password" id="password"><br><br>
+
+    <button onclick="login()">Log In</button>
+
+    <p id="result"></p>
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "Pragna" && password === "123") {
+                document.getElementById("result").innerHTML = "Login Successfully";
+            } else {
+                document.getElementById("result").innerHTML = "Login Failed";
+            }
+        }
+    </script>
+</body>
+</html>

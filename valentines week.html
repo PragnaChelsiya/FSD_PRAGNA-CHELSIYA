@@ -1,0 +1,146 @@
+<html>
+<head>
+    <title>Valentine's Day</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffe6ea;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(./istockphoto-1096956286-612x612.jpg);
+        }
+
+        .box {
+            width: 360px;
+            border-radius: 12px;
+            overflow: hidden; /* IMPORTANT */
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            background: white;
+        }
+
+        .marquee-box {
+            background: #ff4d6d;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 8px 0;
+        }
+
+        .content {
+            padding: 25px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #d6336c;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin: 15px 0;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .submit {
+            background: #ff4d6d;
+            color: white;
+        }
+
+        .refresh {
+            background: #adb5bd;
+            color: white;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #c9184a;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+
+    <!-- Marquee on top of box -->
+    <div class="marquee-box">
+        <marquee behavior="scroll" direction="left">
+            💖 Valentine’s Day Week 💖 Rose • Propose • Chocolate • Teddy • Promise • Hug • Kiss • Valentine
+        </marquee>
+    </div>
+
+    <div class="content">
+        <h2>Valentine's Day</h2>
+
+        <select id="dayNo">
+            <option value="">-- Select Day Number --</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+
+        <div class="btns">
+            <button class="submit" onclick="showDay()">Submit</button>
+            <button class="refresh" onclick="reset()">Refresh</button>
+        </div>
+
+        <div id="output"></div>
+    </div>
+</div>
+
+<script>
+    function showDay() {
+        let dayNo = document.getElementById("dayNo").value;
+        let result = "";
+
+        switch (dayNo) {
+            case "1": result = "Rose Day 🌹"; break;
+            case "2": result = "Propose Day 💍"; break;
+            case "3": result = "Chocolate Day 🍫"; break;
+            case "4": result = "Teddy Day 🧸"; break;
+            case "5": result = "Promise Day 🤝"; break;
+            case "6": result = "Hug Day 🤗"; break;
+            case "7": result = "Kiss Day 😘"; break;
+            case "8": result = "Valentine's Day ❤️"; break;
+            default: result = "";
+        }
+
+        if (result === "") {
+            document.getElementById("output").innerHTML =
+                "Please select a day number";
+        } else {
+            document.getElementById("output").innerHTML =
+                "Today is " + result;
+        }
+    }
+
+    function reset() {
+        document.getElementById("dayNo").value = "";
+        document.getElementById("output").innerHTML = "";
+    }
+</script>
+
+</body>
+</html>

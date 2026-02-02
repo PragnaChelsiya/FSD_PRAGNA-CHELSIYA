@@ -1,0 +1,104 @@
+
+<html>
+<head>
+    <title>Student Grading System</title>
+    <link rel="stylesheet" href="./student grade.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        Student Marks Grading System
+    </div>
+
+    <div class="content">
+        <input type="text" id="regNo" placeholder="Enter Registration Number">
+        <button onclick="getStudent()">Submit</button>
+
+        <div class="profile" id="profile">
+            <img id="photo" src="" alt="Student Photo">
+            <div class="details" id="details"></div>
+            <div class="grade" id="grade"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+function getStudent() {
+    let reg = document.getElementById("regNo").value;
+    let details = "";
+    let marks = 0;
+    let photo = "";
+
+    if (reg == "1") {
+        details = `
+            <p><b>Name:</b> Pragna Chelsiya</p>
+            <p><b>Course:</b> BCA</p>
+            <p><b>Year:</b> Second Year</p>
+            <p><b>Semester:</b> Fourth Semester</p>
+            <p><b>Registration No:</b> 1</p>
+            <p><b>Subject:</b> Full Stack Development</p>
+        `;
+        marks = 86;
+        photo = "pragna.jfif";
+    }
+    else if (reg == "2") {
+        details = `
+            <p><b>Name:</b> Keerthana R</p>
+            <p><b>Course:</b> BCA</p>
+            <p><b>Year:</b> Second Year</p>
+            <p><b>Semester:</b> Fourth Semester</p>
+            <p><b>Registration No:</b> 2</p>
+            <p><b>Subject:</b> Full Stack Development</p>
+        `;
+        marks = 92;
+        photo = "keerthana.jfif";
+    }
+    else if (reg == "3") {
+        details = `
+            <p><b>Name:</b> Sharvani Bijjam</p>
+            <p><b>Course:</b> BCA</p>
+            <p><b>Year:</b> Second Year</p>
+            <p><b>Semester:</b> Fourth Semester</p>
+            <p><b>Registration No:</b> 3</p>
+            <p><b>Subject:</b> Full Stack Development</p>
+        `;
+        marks = 94;
+        photo = "sharvani.jfif";
+    }
+    else if (reg == "4") {
+        details = `
+            <p><b>Name:</b> Misbha N</p>
+            <p><b>Course:</b> BCA</p>
+            <p><b>Year:</b> Second Year</p>
+            <p><b>Semester:</b> Fourth Semester</p>
+            <p><b>Registration No:</b> 4</p>
+            <p><b>Subject:</b> Full Stack Development</p>
+        `;
+        marks = 84;
+        photo = "misbha.jfif";
+    }
+    else {
+        alert("Student not found");
+        return;
+    }
+
+    let grade = "";
+    if (marks >= 90) grade = "A+";
+    else if (marks >= 80) grade = "A";
+    else if (marks >= 70) grade = "B";
+    else if (marks >= 60) grade = "C";
+    else grade = "Fail";
+
+    document.getElementById("profile").style.display = "block";
+    document.getElementById("photo").src = photo;
+    document.getElementById("details").innerHTML =
+        details + `<p><b>Marks:</b> ${marks}</p>`;
+    document.getElementById("grade").innerHTML =
+        "Grade: " + grade;
+}
+</script>
+
+
+</body>
+</html>

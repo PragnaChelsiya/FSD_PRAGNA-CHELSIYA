@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>Simple Interest</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+                    }
+
+        .box {
+            background:linear-gradient(120deg, #74ebd5, #9face6);
+            padding: 30px 45px;
+            width: 360px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            color: #1f2937;
+           
+        }
+
+        h1 {
+            margin-bottom: 18px;
+            color: #0f172a;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .tot {
+            margin-top: 15px;
+            padding: 10px;
+            background: #05b2e2;
+            color: white;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1>Simple Interest App</h1>
+
+        <script>
+            let p_amt = Number(prompt("Enter principle amount:"));
+            let time = Number(prompt("Enter time in months:"));
+            let rate = Number(prompt("Enter rate of interest:"));
+
+            let s_interest = p_amt * time * rate / 100;
+
+            document.write("<p>Principle Amount: ₹" + p_amt + "</p>");
+            document.write("<p>Time: " + time + " months</p>");
+            document.write("<p>Rate of Interest: " + rate + "%</p>");
+            document.write("<div class='tot'>Simple Interest: ₹" + s_interest + "</div>");
+        </script>
+    </div>
+
+</body>

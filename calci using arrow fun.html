@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Calculator</title>
+<style> body { 
+text-align: center; 
+font-family: Arial;
+}
+.parent { 
+display: grid;
+grid-template-columns: repeat(4, 60px);
+gap: 5px; 
+width: 260px; 
+margin: auto;
+}
+.parent div { 
+padding: 15px; 
+background: #eee; 
+cursor: pointer; 
+border: 1px solid #999;
+}
+.display { grid￾column: span 4; 
+background: #222; 
+color: white; text￾align: right; font-size: 
+20px;
+}
+.zero {
+grid-column: span 2;
+}
+</style>
+</head>
+<body>
+<h1>Calculator</h1>
+<h2>CSS GRID</h2>
+<div class="parent">
+<div class="display" id="display">0</div>
+<div onclick="press('C')">C</div>
+<div onclick="press('⌫')">⌫</div>
+<div onclick="press('/')">/</div>
+<div onclick="press('*')">*</div>
+<div onclick="press('7')">7</div>
+<div onclick="press('8')">8</div>
+<div onclick="press('9')">9</div>
+<div onclick="press('-')">-</div>
+<div onclick="press('4')">4</div>
+<div onclick="press('5')">5</div>
+<div onclick="press('6')">6</div>
+<div onclick="press('+')">+</div>
+<div onclick="press('1')">1</div>
+<div onclick="press('2')">2</div>
+<div onclick="press('3')">3</div>
+<div onclick="calculate()">=</div>
+<div class="zero" onclick="press('0')">0</div>
+<div onclick="press('.')">.</div>
+</div>
+<script> var display = 
+document.getElementById("display"); var value = "";
+function press(val) {
+if (val == "C") { value 
+= ""; display.innerHTML 
+= "0";
+}
+else if (val == "⌫") { value = 
+value.substring(0, value.length - 1); 
+display.innerHTML = value; if (value == "") { 
+display.innerHTML = "0";
+}
+}
+else { value = value + 
+val; display.innerHTML = 
+value;
+}
+}
+function calculate() {
+try {
+value = eval(value); 
+display.innerHTML = value;
+}
+catch (e) { 
+display.innerHTML = "Error"; 
+value = "";
+}
+}
+</script>
+</body>
+</html>

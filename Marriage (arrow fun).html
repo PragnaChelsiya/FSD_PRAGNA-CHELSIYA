@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Arrow Function Demo</title>
+<style> body { font-family: 
+Arial, sans-serif; background: 
+#f4f4f4; padding: 20px;
+}
+.box { background: #fff; 
+padding: 15px; margin: 20px auto; 
+width: 300px; border-radius: 8px; 
+box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+h2 { text-align: 
+center; margin￾bottom: 10px; }
+input, select, button {
+width: 100%; 
+padding: 8px; margin: 
+6px 0; border: 1px solid 
+#ccc; border-radius: 
+4px;
+}
+button { background: 
+#0078d7; color: white; 
+border: none; cursor: 
+pointer;
+}
+button:hover { 
+background: #005fa3;
+}
+.result { margin￾top: 10px; font￾weight: bold; color: 
+#333;
+}
+</style>
+</head>
+<body>
+<!-- Marriage Eligibility -->
+<div class="box">
+<h2>Marriage Eligibility</h2> <input type="number" id="age" placeholder="Enter 
+your age">
+<select id="gender">
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+<button onclick="checkEligibility()">Check</button>
+<div class="result" id="eligibilityResult"></div>
+</div>
+<script>
+// Arrow function for marriage eligibility const isEligible = (age, gender) => { if 
+(gender === "male") return age >= 21 ? "Eligible" : "Not Eligible (min age 21)"; if 
+(gender === "female") return age >= 18 ? "Eligible" : "Not Eligible (min age 18)";
+};
+const checkEligibility = () => { let age = 
+parseInt(document.getElementById("age").value); let gender 
+= document.getElementById("gender").value; let result;
+if (isNaN(age)) { result = 
+"Enter a valid age!";
+} else {
+result = isEligible(age, gender);
+}
+document.getElementById("eligibilityResult").textContent =
+"Marriage Eligibility: " + result;
+};
+</script>
+</body>
+</html>
